@@ -8,20 +8,17 @@ on:
 
 jobs:
 
-  build:
-
-    runs-on: ubuntu-latest
-
+  Debian:
+    runs-on: debian-latest
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile.slim --tag pandasOnDebian:$(date +%s)
   
-  buildUbuntu:
+  Ubuntu:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile.alpine --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile.alpine --tag pandasOnUbuntu:$(date +%s)
 
