@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Image Building
 
 on:
   workflow_dispatch:
@@ -13,12 +13,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile.slim --tag pandasOnDebian:$(date +%s)
+      run: docker build . --file Dockerfile.slim --tag my-image-name:$(date +%s)
   
   Ubuntu:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile.alpine --tag pandasOnUbuntu:$(date +%s)
+      run: docker build . --file Dockerfile.alpine --tag my-image-name:$(date +%s)
 
