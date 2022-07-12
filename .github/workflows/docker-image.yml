@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger the Builds
-  
+        run: echo "Start your engines"
   Debian:
     needs: [trigger]
     runs-on: ubuntu-latest
