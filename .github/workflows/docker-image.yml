@@ -2,23 +2,53 @@ name: Image Building
 
 on:
   workflow_dispatch:
-  push:
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
-
-  Debian:
+  trigger:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+      - name: Trigger the Builds
   
-  Ubuntu:
+  Debian:
+    needs: [trigger]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile.alpine --tag my-image-name:$(date +%s)
+      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+
+  Ubuntu:
+    needs: [trigger]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build --no-cache . --file Dockerfile.alpine --tag my-image-name:$(date +%s)
+
+      
+  Debian10x:
+    needs: [Debian]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker images
+      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+    - name: Build the Docker image
+      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+    - name: Build the Docker image
+      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+    - name: Build the Docker image
+      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+    - name: Build the Docker image
+      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+    - name: Build the Docker images
+      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+    - name: Build the Docker image
+      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+    - name: Build the Docker image
+      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+    - name: Build the Docker image
+      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+    - name: Build the Docker image
+      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
 
