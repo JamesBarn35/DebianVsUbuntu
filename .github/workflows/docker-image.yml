@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+      run: time docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
 
   Ubuntu:
     needs: [trigger]
@@ -23,7 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build --no-cache . --file Dockerfile.alpine --tag my-image-name:$(date +%s)
+      run: time docker build --no-cache . --file Dockerfile.alpine --tag my-image-name:$(date +%s)
 
       
   Debian10x:
@@ -32,23 +32,23 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker images
-      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+      run: time docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
     - name: Build the Docker image
-      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+      run: time docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
     - name: Build the Docker image
-      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+      run: time docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
     - name: Build the Docker image
-      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+      run: time docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
     - name: Build the Docker image
-      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+      run: time docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
     - name: Build the Docker images
-      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+      run: time docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
     - name: Build the Docker image
-      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+      run: time docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
     - name: Build the Docker image
-      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+      run: time docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
     - name: Build the Docker image
-      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+      run: time docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
     - name: Build the Docker image
-      run: docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
+      run: time docker build --no-cache . --file Dockerfile.slim --tag my-image-name:$(date +%s)
 
